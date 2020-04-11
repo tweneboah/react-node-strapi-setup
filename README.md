@@ -174,3 +174,59 @@ app.get("/api/testing-session", (req, res) => {
   res.send({ status: "OK" });
 });
 ```
+
+# step 4: Client side configuration
+
+- Am a fun of material ui for my styling but you can use any css framework of your choice
+
+# Packages
+
+i. "@material-ui/core"
+ii. "@material-ui/icons"
+iiii."@material-ui/styles"
+iv. axios
+v. react-router-dom
+vi. redux
+vii. react-redux
+
+# React Proxy
+
+- Remember that our react app runs on http://localhost:3000 and since we want to talk to our custom server through http://localhost:5000 we will configure our react proxy, in this any request we will make will point to our server http://localhost:5000
+
+```js
+{
+  "name": "client",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "@testing-library/jest-dom": "^4.2.4",
+    "@testing-library/react": "^9.3.2",
+    "@testing-library/user-event": "^7.1.2",
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1",
+    "react-scripts": "3.4.1"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject"
+  },
+  "eslintConfig": {
+    "extends": "react-app"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "proxy": "http://localhost:5000"
+}
+```
